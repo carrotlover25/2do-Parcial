@@ -4,6 +4,16 @@
  */
 package main;
 
+import core.person.Doctor;
+import core.person.Owner;
+import core.pet.Cat;
+import core.pet.Dog;
+import core.pet.Parrot;
+import core.pethealth.PetHealth;
+import core.pethealth.TreatmentType;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 /**
  *
  * @author Eracosta

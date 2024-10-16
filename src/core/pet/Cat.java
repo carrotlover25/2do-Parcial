@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Cat extends Pet{
     private String breed;
 
-    public Cat(String breed, String name, int age, float height, float weight, Owner owner) {
+    public Cat(String breed, int age, double par1, double height, Owner owner, String name) {
         super(name, age, height, weight, owner);
         this.breed = breed;
     }

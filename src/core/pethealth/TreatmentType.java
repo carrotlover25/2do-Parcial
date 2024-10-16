@@ -8,10 +8,10 @@ package core.pethealth;
  *
  * @author Eracosta
  */
- public interface TreatmentType {
-    public void VACCINATION();
-    public void DEWORMING();
-    public void SURGERY();
-    public void GENERAL_CHECKUP();
-    
+ public enum TreatmentType {
+    VACCINATION(),
+    DEWORMING(),
+    SURGERY(),
+    GENERAL_CHECKUP();
+        
 }

@@ -16,10 +16,11 @@ public class Dog extends Pet {
     private String breed;
 
     
-    public Dog(String breed, String name, int age, float height, float weight, Owner owner) {
+    public Dog(String breed, int age, double par1, double height, Owner owner, String name) {
         super(name, age, height, weight, owner);
         this.breed = breed;
     }
+
     
     
 }

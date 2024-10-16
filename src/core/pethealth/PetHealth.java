@@ -6,6 +6,9 @@ package core.pethealth;
 
 import core.person.Doctor;
 import core.person.Owner;
+import core.pet.Cat;
+import core.pet.Dog;
+import core.pet.Parrot;
 import core.pet.Pet;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -58,6 +61,10 @@ public class PetHealth   {
         return this.pets.get(index);
     }
     
+    public Owner getOwner(int index){
+        return this.owners.get(index);
+    }
+    
     public void createTreatment(Pet pet, ArrayList<Doctor> doctors, TreatmentType type, LocalDate LocalDate, float cost){
         Treatment treatment = new Treatment();
         treatment.setPet(pet);
@@ -69,26 +76,61 @@ public class PetHealth   {
     
     public void doctorSummary(){
         System.out.println("DoctorSummary");
-        for ( Owner owner : this.owners){
-        System.out.println("Id: " + owner.getId() + "Name: " + Owner.class.getName());
-        int index = 1;
-        System.out.println("Attendance");
-        for (Pet pet : owner.getPets()){
-            System.out.println("Dogs: " );
-            System.out.println("Cats: " );
-            System.out.println("Parrots: "  );
+        for (Doctor doctor : this.doctors){
+         int attendDogs = 0;
+         int attendCats = 0;
+         int attendParrots = 0;
+         
+         int vax = 0;
+         int dew = 0;
+         int surg = 0;
+         int gc = 0;
+         
+         for (Pet pet : this.pets){
+             for (Treatment treatment : this.treatments){
+                 if(treatment.getDoctors().contains(doctor)){
+                     if (pet instanceof Dog){
+                         attendDogs++;
+                     }
+                     if (pet instanceof Cat){
+                         attendCats++;
+                     }
+                     if (pet instanceof Parrot){
+                         attendParrots++;
+                     }
+                   switch (treatment.getType()){
+                       case VACCINATION:
+                   vax++;
+                   break;
+                       case DEWORMING:
+                           dew++;
+                        break;
+                       case SURGERY:
+                       surg++;
+                       break;
+                       case GENERAL_CHECKUP:
+                       gc++;
+                      
+                   }  
+                 }
+        
             
         }
+         }
+            System.out.println("Id: " + doctor.getId());
+            System.out.println("Nombre" + doctor.getName());
+            System.out.println("Attendace");
+            System.out.println("Dogs: " + attendDogs);
+            System.out.println("Cats: " + attendCats);
+            System.out.println("Parrots: " + attendParrots );
+            System.out.println("Vaccinations: " + vax);
+            System.out.println("Dewormings: " + dew);
+            System.out.println("Surgery: " + surg);
+            System.out.println("General Checkup: " + gc);
     }
+       
     }
-    public Owner ownerMostSpent(){
-        Owner maxSpentO = null;
-        double maxSpent = 0;
-  
-        
-    } return maxSpent;
-        
-    }
+
 
     /*@Override
     public void VACCINATION() {

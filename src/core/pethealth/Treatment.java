@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Eracosta
  */
-public class Treatment implements TreatmentType {
+public class Treatment {
     
     private static int id = 0;
     private TreatmentType type;
@@ -83,40 +83,15 @@ public class Treatment implements TreatmentType {
     public void setDoctors(ArrayList<Doctor> doctors) {
         this.doctors = doctors;
     }
-int vaccination;
-    @Override
-    public void VACCINATION() {
-        vaccination++;
-        
-    }
-int deworming = 0;
-    @Override
-    public void DEWORMING() {
-         deworming++;
-    }
-int surgery = 0;
-    @Override
-    public void SURGERY() {
-        surgery++;
-    }
 
-    int checkup = 0;
-    @Override
-    public void GENERAL_CHECKUP() {
-        checkup++;
-    }
 
-    void setDoctor(ArrayList<Doctor> doctors) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     void setLocalDate(LocalDate LocalDate) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    void setPet(Pet pet) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
+   
     
     
     
